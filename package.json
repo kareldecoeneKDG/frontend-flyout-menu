@@ -1,0 +1,27 @@
+{
+  "name": "frontend-flyout-menu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "burger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kareldecoeneKDG/frontend-flyout-menu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kareldecoeneKDG/frontend-flyout-menu/issues"
+  },
+  "homepage": "https://github.com/kareldecoeneKDG/frontend-flyout-menu#readme",
+  "devDependencies": {
+    "bootstrap": "^5.0.0",
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^6.0.0"
+  }
+}
