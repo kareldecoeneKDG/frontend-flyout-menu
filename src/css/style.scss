@@ -1,4 +1,4 @@
-@import '../../node_modules/bootstrap/scss/bootstrap';
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 * {
     margin: 0px;
@@ -6,63 +6,39 @@
     box-sizing: border-box;
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-    background-color: #F40009;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+// Define what menu looks like on mobile
+/*html {
+    width: 100%;
+    overflow-x: hidden;
+} */
 
-    .logo {
-        h4 {
-            color: white;
-            font-size: 22px;
-            text-transform: uppercase;
-        }
-    }
-    
-    .nav-links {
+body {
+    overflow-x: hidden;
+
+    nav {
         display: flex;
         justify-content: space-around;
-        width: 35%;
-    
-        li {
-            list-style-type: none;
-        }
-    
-        a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-    
-    .burger {
-        display: none;
-        cursor: pointer;
-    
-        div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 5px;
-            transition: all 0.3s ease;
-        }
-    }
-}
+        align-items: center;
+        min-height: 8vh;
+        background-color: #f40009;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-@media screen and (max-width: 768px){
-    body {
-        overflow-x: hidden;
+        .logo {
+            h4 {
+                color: white;
+                font-size: 22px;
+                text-transform: uppercase;
+            }
+        }
 
         .nav-links {
+            display: flex;
+            justify-content: space-around;
             position: absolute;
             right: 0px;
             height: 46vh;
             top: 8vh;
-            background-color: #F40009;
-            display: flex;
+            background-color: #f40009;
             flex-direction: column;
             align-items: center;
             width: 50%;
@@ -70,12 +46,28 @@ nav {
             transition: transform 0.5s ease-in;
 
             li {
+                list-style-type: none;
                 opacity: 0;
+            }
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
             }
         }
 
         .burger {
+            cursor: pointer;
             display: block;
+
+            div {
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                margin: 5px;
+                transition: all 0.3s ease;
+            }
         }
 
         .nav-active {
@@ -84,17 +76,19 @@ nav {
     }
 }
 
-@keyframes navLinkFade{
-    from{
+// Animations for the individual links in the menu to fade in
+@keyframes navLinkFade {
+    from {
         opacity: 0;
         transform: translateX(50px);
     }
-    to{
+    to {
         opacity: 1;
         transform: translateX(0px);
     }
 }
 
+// The state of the hamburger when the menu is "opened", it becomes a cross
 .toggle {
     .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
@@ -104,5 +98,57 @@ nav {
     }
     .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+// Media query to define what menu looks like on Desktop
+@media screen and (min-width: 769px) {
+    body {
+        nav { //oke
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 8vh;
+            background-color: #f40009;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    
+            .logo {
+                h4 {
+                    color: white;
+                    font-size: 22px;
+                    text-transform: uppercase;
+                    letter-spacing: 5px;
+                }
+            }
+    
+            .nav-links {
+                display: flex;
+                justify-content: space-around;
+                width: 35%;
+                position: static;
+                height: 8vh;
+                top: 0vh;
+                flex-direction: row;
+                align-items: normal;
+                transform: translateX(0%);
+                transition: none;
+                padding-top: 3vh;
+    
+                li {
+                    list-style-type: none;
+                    opacity: 1;
+                }
+    
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+            }
+    
+            .burger {
+                display: none;
+            }
+        }
     }
 }
